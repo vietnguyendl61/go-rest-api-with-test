@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  user-service:
+    image: service_test
+    restart: always
+    ports:
+      - "4000:4000"
+      # - "10000:10000" GRPC INTERNAL
+    networks:
+      - go-rest-api-with-test
+
+networks:
+  go-rest-api-with-test:
+    driver: bridge
