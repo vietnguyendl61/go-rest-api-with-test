@@ -22,9 +22,9 @@ func main() {
 	//}
 	//MigrateDB(db)
 
-	jobHandler := handlers.NewJobHandler()
+	userHandler := handlers.NewJobHandler()
 	router := mux.NewRouter()
-	router.HandleFunc("/job/create", jobHandler.Create).Methods(http.MethodPost)
+	router.HandleFunc("/user/create", userHandler.Create).Methods(http.MethodPost)
 	router.HandleFunc("/health-check", func(w http.ResponseWriter, r *http.Request) {
 		dataResponse := struct {
 			Status  string `json:"status"`

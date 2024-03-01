@@ -1,13 +1,11 @@
 package model
 
-import (
-	"time"
-)
-
 type User struct {
 	BaseModel
-	BookDate    time.Time `json:"book_date" gorm:"column:book_date;not null"`
-	Description string    `json:"description" gorm:"column:description;type:text"`
+	UserName string `json:"user_name" gorm:"column:user_name;type:varchar(255);not null"`
+	Password string `json:"password" gorm:"column:password;type:varchar(255);not null"`
+	Address  string `json:"address" gorm:"column:address;type:text"`
+	Email    string `json:"email" gorm:"column:email"`
 }
 
 func (u User) TableName() string {
